@@ -12,6 +12,7 @@ import { IconCaretLeftFilled } from "@tabler/icons-react";
 import { IconCaretDownFilled } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import watch from "./assests/watch2.jpg"
 
 const ExploreTwoPublic = ({
   src,
@@ -62,7 +63,7 @@ const ExploreTwoPublic = ({
       >
         {title || (
           <span>
-            This Macbook is built with Tailwindcss. <br /> No kidding.
+            Introduce You The X
           </span>
         )}
       </motion.h2>
@@ -143,7 +144,7 @@ export const Lid = ({
       >
         <div className="absolute inset-0 bg-[#272729] rounded-lg" />
         <Image
-          src={src}
+          src={watch}
           alt="aceternity logo"
           fill
           className="object-cover object-left-top absolute rounded-lg inset-0 h-full w-full"
@@ -645,7 +646,7 @@ const MacbookScrollDemo= () => {
         <ExploreTwoPublic
           title={
             <span>
-              This Macbook is built with Tailwindcss. <br /> No kidding.
+              Introduce You <br/>The X
             </span>
           }
           badge={
