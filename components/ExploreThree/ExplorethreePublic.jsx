@@ -21,7 +21,7 @@ const ExplorethreePublic = ({
     container: ref,
     offset: ["start start", "end start"],
   });
-  const cardLength = content.length;
+  const cardLength = content?.length;
 
   useMotionValueEvent(scrollYProgress, "change", (latest) => {
     const cardsBreakpoints = content.map((_, index) => index / cardLength);
@@ -67,7 +67,7 @@ const ExplorethreePublic = ({
     >
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
-          {content.map((item, index) => (
+          {content?.map((item, index) => (
             <div key={item.title + index} className="my-20">
               <motion.h2
                 initial={{
