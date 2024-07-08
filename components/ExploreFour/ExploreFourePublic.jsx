@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -7,7 +7,7 @@ import w12 from "@/public/assests/w12.png";
 import w13 from "@/public/assests/w13.gif";
 import w14 from "@/public/assests/w14.gif";
 import w15 from "@/public/assests/w15.gif";
-import bgImage from "@/public/assests/watchBg.png"; // Import your background image
+import bgImage from "@/public/assests/watchBg.png";
 
 const ExploreFourePublic = () => {
   const [positionIndexes, setPositionIndexes] = useState([0, 1, 2, 3, 4]);
@@ -32,8 +32,8 @@ const ExploreFourePublic = () => {
   };
 
   useEffect(() => {
-    const interval = setInterval(handleNext, 2000); // Change image every 2 seconds
-    return () => clearInterval(interval); // Clear interval on component unmount
+    const interval = setInterval(handleNext, 2000);
+    return () => clearInterval(interval);
   }, []);
 
   const images = [w11, w12, w13, w14, w15];
@@ -49,17 +49,11 @@ const ExploreFourePublic = () => {
   };
 
   return (
-    <div className="flex items-center justify-center bg-black h-screen ">
-      <div
-        className="relative"
-        style={{
-          width: '400px',
-          height: '550px',
-          backgroundImage: `url(${bgImage.src})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
+    <div className="relative flex items-center justify-center bg-black h-screen">
+      <div className="absolute inset-0 z-10 flex items-center justify-center">
+        <Image src={bgImage} alt="Background" className="w-[400px] h-[600px]" />
+      </div>
+      <div className="relative z-0" style={{ width: "400px", height: "550px" }}>
         {images.map((image, index) => (
           <motion.div
             key={index}
@@ -68,15 +62,15 @@ const ExploreFourePublic = () => {
             variants={imageVariants}
             transition={{ duration: 0.5 }}
             style={{
-              width: '100%',
-              height: '100%',
-              position: 'absolute',
+              width: "100%",
+              height: "100%",
+              position: "absolute",
             }}
           >
             <Image
               src={image}
               alt={`image-${index}`}
-              className="rounded-full w-[350px] h-[350] ml-10 mt-20"
+              className="rounded-full w-[340px] h-[340px] ml-7 mt-[100px]"
             />
           </motion.div>
         ))}

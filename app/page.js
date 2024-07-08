@@ -29,6 +29,14 @@ export default function Home() {
             Explore Three
           </Link>
         </div>
+        <div>
+          <Link
+            href="/explore-four"
+            className="px-6 py-2 text-lg border-2 border-teal-400"
+          >
+            Explore Four
+          </Link>
+        </div>
       </div>
     </main>
   );
